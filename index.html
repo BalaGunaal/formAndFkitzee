@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/popup.css">
+  <script src="https://kit.fontawesome.com/909ea8e302.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput-jquery.min.js"></script>
+  <style src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.js"></style>
+  <style>
+    .iti-flag {
+      background-image: url("img/flags.png");
+    }
+
+    @media (-webkit-min-device-pixel-ratio:2),
+    (min-resolution: 192dpi) {
+      .iti-flag {
+        background-image: url("img/flags@2x.png");
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" integrity="sha512-DNeDhsl+FWnx5B1EQzsayHMyP6Xl/Mg+vcnFPXGNjUZrW28hQaa1+A4qL9M+AiOMmkAhKAWYHh1a+t6qxthzUw==" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $(".default_option").click(function() {
+        $(this).parent().toggleClass("active");
+      });
+      $(".select_ul li").click(function() {
+        var currentEle = $(this).text();
+        $(".default_option li").text(currentEle);
+        $(this).parents(".select_wrap").removeClass("active");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form class="form" action="index.html" method="post">
+      <h1 class="heading">Flits</h1>
+      <button id="button" type="button" name="button" class="contact-btn">Contact Us</button>
+    </form>
+  </div>
+
+
+  <div id="popup_screen" class="popup">
+    <form onsubmit="return formValidation()" action="success.html" class="myform">
+
+      <div class="popup-content">
+        <img src="./h2.png" alt="" class="support-icon">
+        <a href="#" id="close_id" class="close"><i class="fas fa-times fa-lg"></i></a>
+
+        <h2>Contact Us</h2>
+        <p>Your Satisfaction is Our Top Priority</p>
+
+
+        <!-- GRID -->
+        <section class="grid-container">
+          <!-- FLEX -->
+          <div class="content content-1">
+            <label for="firstName">First Name</label>
+            <div class="input">
+              <div class="icon-awesome">
+                <i class="far fa-user fa-lg i"></i>
+              </div>
+              <input type="text" name="firstName" value="" placeholder="James" class="input-field f-name">
+            </div>
+
+          </div>
+
+          <div class="content content-2">
+            <label for="firstName">Last Name</label>
+            <div class="input">
+              <div class="icon-awesome">
+                <i class="far fa-user fa-lg i"></i>
+              </div>
+              <input type="text" name="firstName" value="" placeholder="James" class="input-field l-name">
+            </div>
+
+          </div>
+          <div class="content content-3">
+            <label for="email">Email</label>
+            <div class="input">
+              <div class="icon-awesome icon-email">
+                <i class="far fa-envelope fa-lg i"></i>
+              </div>
+              <input name="email" type="email" placeholder="abc@xyz.com" class="input-field email">
+            </div>
+            <div id="req-email" class="required">
+              <i class="fas fa-exclamation-circle fa-xs req-icon "></i>
+              <p>Email is Required</p>
+            </div>
+          </div>
+          <div class="content content-4">
+            <label for="phone">Phone Number</label>
+            <div class="input">
+              <div class="icon-awesome icon-phone">
+                <i class="fas fa-phone-alt fa-lg i"></i>
+              </div>
+
+              <input type="tel" id="phone" class="tphone">
+            </div>
+
+          </div>
+          <!-- ================================================================ -->
+          <div class="content content-5">
+            <label class="reason-label" for="firstName">Reason to Contact</label>
+
+            <div class="wrapper">
+              <div class="select_wrap">
+                <ul class=" default_option">
+                  <li class="reason">
+
+                    Please Select a Reason..
+
+                  </li>
+                </ul>
+
+                <ul class="select_ul">
+                  <li class="li-options">
+
+                    Cancel Order
+
+                  </li>
+                  <li class="li-options">
+
+                    Order/Shipping
+
+                  </li>
+                  <li class="li-options">
+
+                    Return/Exchange
+
+                  </li>
+                  <li class="li-options">
+
+                    Product
+
+                  </li>
+                  <li class="li-options">
+
+                    Price
+
+                  </li>
+                  <li class="li-options">
+
+                    Other
+
+                  </li>
+                </ul>
+                <div id="req-reason" class="required">
+                  <i class="fas fa-exclamation-circle fa-xs req-icon"></i>
+                  <p>Please select the reason</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!----------- ================================================================== -->
+
+          <div class="content content-6">
+            <label for="messageArea">Message</label>
+            <textarea name="messageArea" rows="4" cols="88" placeholder="Plese type your message here..." class="message"></textarea>
+            <div id="req-message" class="required">
+              <i class="fas fa-exclamation-circle fa-xs req-icon"></i>
+              <p>Message is Required</p>
+            </div>
+          </div>
+
+          <div class="content content-7">
+            <label for="link">Attachment Link</label>
+            <div class="input">
+              <div class="icon-awesome icon-phone">
+                <i class="fas fa-link fa-lg i"></i>
+              </div>
+              <input type="url" name="link" placeholder="Type the URL to upload the files" class="input-field input-url">
+            </div>
+          </div>
+
+          <div class="content content-8">
+            <button type="submit" id="button-submit" class="btn-sub">SUBMIT</button>
+          </div>
+
+
+
+        </section>
+
+
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <script>
+    document.getElementById("button").addEventListener("click", function(e) {
+      e.preventDefault();
+      var element = document.getElementById("popup_screen");
+      element.classList.toggle("popup-active");
+    });
+
+    document.getElementById("close_id").addEventListener("click", function(e) {
+      e.preventDefault();
+      var element = document.getElementById("popup_screen");
+      elements.reqEmail.classList.remove("req-active");
+      elements.reqReason.classList.remove("req-active");
+      elements.reqMessage.classList.remove("req-active");
+      element.classList.toggle("popup-active");
+    });
+  </script>
+
+  <script>
+    var input = document.querySelector('#phone');
+    var iti = window.intlTelInput(input, {
+      utilsScript: 'js/utils.js'
+    });
+  </script>
+
+  <script src="./app.js" charset="utf-8"></script>
+</body>
+
+</html>

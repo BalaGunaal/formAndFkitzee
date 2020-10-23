@@ -1,0 +1,11 @@
+{
+  "name": "flits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
